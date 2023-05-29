@@ -1,0 +1,30 @@
+    <%= form_with(url: jobs_path, method: :get, class: "row g-3 justify-content-center") do |form| %>
+        <%= form.text_field :q, value: @q, placeholder: "Search By Title", class: "col-auto form-control w-75" %>
+        <%= form.submit "Search!", class: "col-auto btn btn-outline-primary search-btn" %>
+    <% end %>
+    
+    <div class="row">
+        <% @jobs.each do |job| %>
+            <div class="col-md-6">
+                <div class="card m-3 border-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                        <%= link_to job.title, job_path(job) %>
+                        </h5>
+                        <% if job.job_type.present? %>
+                            <div class="align-items-center badge rounded-pill bg-primary align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                </svg>
+                                <%= job.job_type %>
+                            </div>
+                        <% end %>
+                        <p class="card-text">
+                        <%= job.description.truncate(40) %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>

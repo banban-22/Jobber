@@ -1,0 +1,35 @@
+<h3>User Information</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <% if !@user.is_recruiter? %>
+        <th scope="col">Resume</th>
+      <% end %>
+      <th scope="col">Recruiter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @user.first_name %></td>
+      <td><%= @user.last_name %></td>
+      <td><%= @user.email %></td>
+      <% if !@user.is_recruiter? %>
+      <td>
+        <% if @user.resume.attached? %>
+          <%= link_to "Download Resume", rails_blob_path(@user.resume, disposition: "attachment") %>
+        <% else %>
+          No resume attached.
+        <% end %>
+      </td>
+      <% end %>
+      <td><%= @user.is_recruiter? ? 'Yes' : 'No' %></td>
+    </tr>
+  </tbody>
+</table>
+
+<% if @user == current_user %>
+  <%= link_to "Edit User Information", edit_user_path(current_user), class: "btn btn-primary" %>
+<% end %>

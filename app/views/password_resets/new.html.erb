@@ -1,0 +1,9 @@
+<h1> Forgot Passsword </h1>
+
+<%= form_with(url: password_resets_path, method: :post) do |f| %>
+  <p>Enter your email address below, and we'll send you instructions on how to reset your password.</p>
+
+  <%= f.email_field :email, placeholder: 'john@doe.com' %>
+
+  <%= f.submit 'Send' %>
+<% end %>

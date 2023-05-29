@@ -1,0 +1,30 @@
+<h1>Your Applied Jobs</h1>
+
+<% if @applies&.any? %>
+  <div class="card">
+    <ul class="list-group list-group-flush">
+      <% @applies.each do |a| %>
+        <li class="list-group-item d-flex flex-direction-between">
+          <%= link_to a.job do %>
+            <%= a.job.title %>
+          <% end %>
+          <div class="badge_gap">
+          <% if a.status == "Reject" %>
+            <span class="badge bg-danger rounded-pill"><%= a.status %></span>
+            <% elsif a.status == "Shortlisted" %>
+            <span class="badge bg-primary rounded-pill"><%= a.status %></span>
+            <% elsif a.status == "Interview" %>
+            <span class="badge bg-success rounded-pill"><%= a.status %></span>
+            <% else %>
+            <span class="badge bg-secondary rounded-pill"><%= a.status %></span>
+          <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <h4>You haven't applied to yet!</h4>
+<% end %>
+
+<%= link_to "Back", root_path, class: "btn btn-primary mt-3" %>

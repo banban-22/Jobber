@@ -1,0 +1,16 @@
+.delete-btn,
+.update-btn,
+.search-btn {
+    margin-left: 10px;
+}
+
+.show-title {
+    display: flex !important;
+    flex-direction: row !important ;
+    justify-content: space-between !important ;
+    align-items: center !important ;
+}
+
+.badge_gap {
+    margin-left: 10px;
+}

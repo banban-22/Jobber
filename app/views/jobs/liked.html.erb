@@ -1,0 +1,16 @@
+<h1>Saved Jobs</h1>
+    <% if @jobs.empty? %>
+        <h2> No Saved jobs </h2>
+    <% else %>
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            <% @jobs.each do |job| %>
+                <li class="list-group-item d-flex flex-direction-between">
+                    <%= link_to(job.title,job_path(job)) %> 
+                </li>
+            <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+<%= link_to "Back", root_path, class: "btn btn-primary mt-3" %>
