@@ -52,17 +52,17 @@ class UsersController < ApplicationController
         @user = current_user
         if @user.authenticate(params[:current_password])
             if params[:new_password] == params[:new_password_confirmation]
-            @user.password = params[:new_password]
-            if @user.save
-                flash[:notice] = "Password Successfully Updated!"
-                redirect_to root_path
+                @user.password = params[:new_password]
+                if @user.save
+                    flash[:notice] = "Password Successfully Updated!"
+                    redirect_to root_path
+                else
+                    flash[:alert] = "Failed to update password."
+                    render :change_password
+                end
             else
-                flash[:alert] = "Failed to update password."
+                flash[:alert] = "Passwords Do Not Match!"
                 render :change_password
-            end
-            else
-            flash[:alert] = "Passwords Do Not Match!"
-            render :change_password
             end
         else
             flash[:alert] = "Your current password is incorrect"
