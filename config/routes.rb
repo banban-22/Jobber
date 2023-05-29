@@ -43,8 +43,4 @@ Rails.application.routes.draw do
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-# get '/forgot_password', to: 'users#forgot_password', as: 'forgot_password'
-# post '/forgot_password', to: 'users#send_reset_password_email', as: 'send_reset_password_email'
-# get '/reset_password', to: 'users#reset_password', as: 'reset_password'
-# patch '/reset_password', to: 'users#update_password', as: 'update_password'
 end
