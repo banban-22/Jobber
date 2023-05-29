@@ -1,10 +1,12 @@
 databases:
-  - name: postgres
-    ipAllowlist: []
+  - name: Jobber
+    databaseName: Jobber
+    user: Jobber
 
 services:
   - type: web
-    name: rails
+    name: Jobber
+    plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
@@ -17,6 +19,5 @@ services:
         sync: false
   - type: redis
     name: redis
-    ipAlliowList: []
     plan: free
     maxmemoryPolicy: noeviction
