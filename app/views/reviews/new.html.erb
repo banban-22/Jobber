@@ -7,7 +7,7 @@
 <% end %>
 
 
-<%= form_with model: [@job, @review], url: job_reviews_path(@job.id) do |form| %>
+<%= form_with model: [@job, @review], data: { turbo_method: :post}, url: job_reviews_path(@job.id) do |form| %>
   <div class="form-group mt-3">
     <%= form.label :title %>
     <%= form.text_field :title, :require => true, class: "form-control" %>
