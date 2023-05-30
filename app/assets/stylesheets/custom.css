@@ -14,3 +14,7 @@
 .badge_gap {
     margin-left: 10px;
 }
+
+tr {
+    padding-right: 10px !important;
+}

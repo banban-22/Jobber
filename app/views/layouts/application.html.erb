@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Jobber</title>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -50,7 +51,12 @@
           <li class="nav-item align-items-center">
             <%= content_tag :p, class: "nav-item mb-0" do %>
               <%= link_to user_path(current_user), class: "nav-link btn btn-primary" do %>
-                Hello <%= current_user.first_name %>,
+                <% if current_user.profile_picture.attached? %>
+                  <image src="<%= url_for(@user.profile_picture) %>" class="rounded-circle" width="25" height="25">
+                <% else %>
+                <%= image_tag "https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png", width: "25", height: "25", class: "rounded-circle" %>
+                <% end %>
+                <%= current_user.first_name %>
               <% end %>
             <% end %>
           </li>
