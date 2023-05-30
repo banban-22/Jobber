@@ -10,17 +10,17 @@
 <%= form_with model: [@job, @review], data: { turbo_method: :post}, url: job_reviews_path(@job.id) do |form| %>
   <div class="form-group mt-3">
     <%= form.label :title %>
-    <%= form.text_field :title, :require => true, class: "form-control" %>
+    <%= form.text_field :title, required: true, autofocus: true, placeholder: 'Awesome', class: "form-control" %>
   </div>
 
   <div class="form-group mt-3">
     <%= form.label :job_title %>
-    <%= form.text_field :job_title, :require => true, class: "form-control" %>
+    <%= form.text_field :job_title, required: true, placeholder: 'Frontend Engineer', class: "form-control" %>
   </div>
 
   <div class="form-group mt-3">
     <%= form.label :location %>
-    <%= form.text_field :location, class: "form-control" %>
+    <%= form.text_field :location, placeholder: 'Vancouver', class: "form-control" %>
   </div>
 
   <div class="form-group mt-3">
@@ -29,13 +29,14 @@
   </div>
 
   <div class="form-group mt-3">
-    <%= form.label :rating %>
-    <%= form.number_field :rating, :require => true, class: "form-control" %>
+    <%= form.label :rating, class: "form-label" %>
+    <%= form.number_field :rating, :required => true, placeholder: '5', class: "form-control" %>
+    <div id="ratingHelp" class="form-text text-secondary">Rating must be a number between 1 and 5.</div>
   </div>
 
   <div class="form-group mt-3">
     <%= form.label :content %>
-    <%= form.text_area :content, :require => true, class: "form-control" %>
+    <%= form.text_area :content, required: true, class: "form-control" %>
   </div>
 
   <%= form.submit "Create Review", class: "btn btn-primary mt-3" %>

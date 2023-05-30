@@ -50,9 +50,9 @@
       <% if user_signed_in? %>
           <li class="nav-item align-items-center">
             <%= content_tag :p, class: "nav-item mb-0" do %>
-              <%= link_to user_path(current_user), class: "nav-link btn btn-primary" do %>
+              <%= link_to user_path(current_user), class: "nav-link btn btn-light" do %>
                 <% if current_user.profile_picture.attached? %>
-                  <image src="<%= url_for(@user.profile_picture) %>" class="rounded-circle" width="25" height="25">
+                  <image src="<%= url_for(current_user.profile_picture) %>" class="rounded-circle" width="25" height="25">
                 <% else %>
                 <%= image_tag "https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png", width: "25", height: "25", class: "rounded-circle" %>
                 <% end %>

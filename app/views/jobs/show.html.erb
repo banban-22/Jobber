@@ -10,7 +10,7 @@
       
     </h2>
     
-    <h4 class="card-subtitle mb-2 text-body-secondary"><%= @job.company %> | <%= @job.location %></h4>
+    <h4 class="card-subtitle mb-2 text-body-secondary"><%= @job.company.capitalize %> | <%= @job.location.capitalize %></h4>
       <% if @job.job_type.present? %>
           <div class="align-items-center badge rounded-pill bg-primary align-items-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
@@ -150,7 +150,7 @@
       <%= review.job_title %>
       ( <%= review.is_current ? 'Current Employee' : 'Former Employee' %> ) - 
       <% if review.location.present? %>
-      <%= review.location %>
+      <%= review.location.capitalize %>
       <% else %>
       N/A
       <% end %>

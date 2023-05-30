@@ -7,6 +7,8 @@ class UsersController < ApplicationController
         @user = User.new user_params
         @user.is_recruiter = params[:user][:is_recruiter] == "1"
         @user.resume.attach(params[:user][:resume])
+        @user.profile_picture.attach(params[:user][:profile_picture]) if params[:user][:profile_picture].present?
+
         if @user.save
             session[:user_id] = @user.id
             redirect_to root_path, notice: 'Account created!'
