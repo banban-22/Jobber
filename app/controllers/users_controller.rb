@@ -13,6 +13,8 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to root_path, notice: 'Account created!'
         else
+            flash[:alert] = @user.errors.full_messages.join(', ')
+            p @user.errors.full_messages
             render :new
         end
     end
@@ -32,9 +34,12 @@ class UsersController < ApplicationController
         @user.resume.attach(params[:user][:resume])
         @user.profile_picture.attach(params[:user][:profile_picture]) if params[:user][:profile_picture].present?
 
+        @user.password_requirements
+
         if @user.save
             redirect_to root_path, notice: 'User updated successfully!'
         else
+            flash[:alert] = @user.errors.full_messages.join(', ')
             render :edit
         end
     end
@@ -62,7 +67,7 @@ class UsersController < ApplicationController
                     flash[:notice] = "Password Successfully Updated!"
                     redirect_to root_path
                 else
-                    flash[:alert] = "Failed to update password."
+                    flash[:alert] = @user.errors.full_messages.join(', ')
                     render :change_password
                 end
             else

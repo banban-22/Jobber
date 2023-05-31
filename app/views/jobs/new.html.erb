@@ -16,8 +16,8 @@
 
     <div class="form-group mt-3">
     <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control" %>
-    </div>
+        <%= f.text_area :description, placeholder: 'You can use markdown here: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet', class: "form-control" %>
+  </div>
 
     <div class="form-group mt-3">
     <%= f.label :company %>
@@ -31,7 +31,7 @@
 
     <div class="form-group mt-3">
     <%= f.label :job_type %>
-    <%= f.select :job_type, ['Full-Time', 'Part-Time', 'Contract', 'Internship/Co-op'], { prompt: 'Select Job Type' }, class: "form-control" %>
+    <%= f.select :job_type, ['Full-Time', 'Part-Time', 'Contract', 'Internship'], { prompt: 'Select Job Type' }, class: "form-control" %>
     </div>
 
     <%= f.submit class: "btn btn-primary w-100 mt-3" %>

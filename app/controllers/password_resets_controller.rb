@@ -18,6 +18,7 @@ class PasswordResetsController < ApplicationController
   def edit
     @user = User.find_by(reset_password_token: params[:id])
     if @user && @user.reset_password_token_expires_at && @user.reset_password_token_expires_at >= Time.zone.now
+      render :edit
     else
       flash[:alert] = "Password reset token has expired."
       redirect_to new_password_reset_path
@@ -29,7 +30,7 @@ class PasswordResetsController < ApplicationController
     if @user && @user.reset_password_token_expires_at >= Time.zone.now
       if @user.update(user_params)
         @user.clear_reset_password_token!
-        flash[:success] = "Password successfully updated."
+        flash[:notice] = "Password successfully updated."
         redirect_to new_sessions_path
       else
         render :edit

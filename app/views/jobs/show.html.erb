@@ -20,7 +20,7 @@
               <%= @job.job_type %>
           </div>
       <% end %>
-    <p class="card-text"><%= @job.description%></p>
+    <p class="card-text"><%= markdown(@job.description) %></p>
 
 
     <p>Updated <%= time_ago_in_words(@job.updated_at) %> ago</p>

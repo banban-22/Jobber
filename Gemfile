@@ -65,6 +65,15 @@ gem 'whenever', require: false
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
 
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+
+gem 'font-awesome-rails'
+
+gem 'md_simple_editor', '~> 0.1.9'
+
+gem 'font-awesome-sass', "~> 6.1" 
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
