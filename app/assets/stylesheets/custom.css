@@ -1,6 +1,7 @@
 .delete-btn,
 .update-btn,
-.search-btn {
+.search-btn,
+.badge_gap {
     margin-left: 10px;
 }
 
@@ -11,18 +12,15 @@
     align-items: center !important ;
 }
 
-.badge_gap {
-    margin-left: 10px;
-}
-
-.badge_gap-right {
-    margin-right: 10px;
-}
-
 tr {
     padding-right: 10px;
 }
 
 .badge-width {
     width: 2rem;
+}
+
+.hover-title:hover {
+    cursor: pointer;
+    text-decoration: underline !important ;
 }

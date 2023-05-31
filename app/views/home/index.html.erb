@@ -9,8 +9,9 @@
                 <div class="card m-3 border-dark">
                     <div class="card-body">
                         <h5 class="card-title">
-                        <%= link_to job.title, job_path(job) %>
+                        <%= link_to job.title, job_path(job), class: "text-decoration-none text-dark hover-title" %>
                         </h5>
+                        <p class="mb-1"><%= job.company %> ・ <%= job.location %></p>
                         <% if job.job_type.present? %>
                             <div class="d-flex align-items-center justify-content-around badge rounded-pill bg-primary" style="width: 20%">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
