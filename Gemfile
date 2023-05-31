@@ -74,6 +74,8 @@ gem 'md_simple_editor', '~> 0.1.9'
 
 gem 'font-awesome-sass', "~> 6.1" 
 
+gem 'acts-as-taggable-on'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

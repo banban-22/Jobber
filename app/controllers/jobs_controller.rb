@@ -11,6 +11,12 @@ class JobsController < ApplicationController
             @q = ""
             @jobs = Job.all.order(created_at: :desc)
         end
+
+        if params[:tag].present?
+            @jobs = Job.tagged_with(params[:tag])
+        else
+            @jobs = Job.all.order(created_at: :desc)
+  end
     end
 
     def show
@@ -78,7 +84,7 @@ class JobsController < ApplicationController
 
     private
     def job_params
-        params.require(:job).permit(:title, :description, :company, :location, :job_type)
+        params.require(:job).permit(:title, :description, :company, :location, :job_type, :tag_list)
     end
 
     def authorize_recruiter!

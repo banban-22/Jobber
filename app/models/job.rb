@@ -14,6 +14,8 @@ class Job < ApplicationRecord
 
     before_validation(:set_default_view_count)
 
+    acts_as_taggable_on :tags
+
     def self.search(keyword)
         where('title ILIKE ?', "%#{keyword}%")
     end

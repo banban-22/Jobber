@@ -23,6 +23,12 @@
                         <p class="card-text mt-1">
                         <%= job.description.truncate(40) %>
                         </p>
+
+                        <div class="d-flex align-items-center justify-content-start">
+                        <% job.tag_list.each do |tag| %>
+                            <%= link_to("##{tag}", jobs_path(tag: tag), class: "badge bg-light text-dark text-decoration-none", style: "margin-right: 10px") %>
+                        <% end %>
+                        </div>
                         <small>Posted <%= time_ago_in_words(job.created_at) %> ago</small>
                     </div>
                 </div>
