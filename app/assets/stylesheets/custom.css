@@ -24,3 +24,7 @@ tr {
     cursor: pointer;
     text-decoration: underline !important ;
 }
+
+.border-left-primary {
+    border-left: 0.25rem solid #4e73df !important;
+}

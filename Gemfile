@@ -76,6 +76,11 @@ gem 'font-awesome-sass', "~> 6.1"
 
 gem 'acts-as-taggable-on'
 
+gem 'chartkick'
+
+gem "groupdate"
+
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

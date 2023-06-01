@@ -1,0 +1,33 @@
+<h1>Application Analysis</h1>
+
+<div class="row">
+
+<% @all_statuses.each do |status| %>
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-1">
+      <div class="card-body px-4">
+        <div class="row align-items-center">
+          <div class="col">
+            <div class="text-sm fw-bold text-uppercase text-black-50">
+              <%= status.capitalize %>
+            </div>
+            <div class="h5 mb-0 fw-bold fs-4">
+              <%= @applies[status.capitalize].to_i %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+</div>
+
+<div class="row">
+    <div class="col-xl-6">
+      <%= pie_chart @applies, height: "400px", min: 0, zeros: true %>
+    </div>
+    <div class="col-xl-6">
+      <%= column_chart @user.applies.group_by_month(:created_at, format: "%B").count, height: "400px", xtitle: 'Month', ytitle: 'Number of Applications', library: { scales: { y: { beginAtZero: true } } }, data: { fill: 0 } %>
+    </div>
+</div>

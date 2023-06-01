@@ -82,6 +82,7 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
     cancancan (3.5.0)
+    chartkick (5.0.2)
     chronic (0.10.2)
     concurrent-ruby (1.2.2)
     cowsay (0.3.0)
@@ -112,6 +113,8 @@ GEM
       sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    groupdate (6.2.1)
+      activesupport (>= 5.2)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -282,6 +285,7 @@ DEPENDENCIES
   bootstrap (~> 5.2, >= 5.2.3)
   bundler (~> 2.4, >= 2.4.13)
   cancancan (~> 3.5)
+  chartkick
   cowsay (~> 0.3.0)
   debug
   delayed_job_active_record (~> 4.1, >= 4.1.1)
@@ -289,6 +293,7 @@ DEPENDENCIES
   faker (~> 3.2)
   font-awesome-rails
   font-awesome-sass (~> 6.1)
+  groupdate
   image_processing (~> 1.12, >= 1.12.2)
   importmap-rails
   jbuilder

@@ -45,4 +45,7 @@ Rails.application.routes.draw do
 
   get 'tags/autocomplete', to: 'tags#autocomplete'
 
+  get '/analysis', to: 'analysis#index', as: 'analysis'
+  get 'analysis/applications_by_month', to: 'analysis#applications_by_month'
+
 end

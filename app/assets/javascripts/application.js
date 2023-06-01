@@ -6,3 +6,5 @@
 //= require jquery-ui/widgets/autocomplete
 //= require tags-autocomplete
 //= require_tree .
+//= require chartkick
+//= require Chart.bundle
