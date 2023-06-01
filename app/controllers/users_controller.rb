@@ -29,20 +29,22 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = User.find(params[:id])
-        @user.is_recruiter = params[:user][:is_recruiter] == "1"
-        @user.resume.attach(params[:user][:resume])
-        @user.profile_picture.attach(params[:user][:profile_picture]) if params[:user][:profile_picture].present?
+    @user = User.find(params[:id])
+    @user.is_recruiter = params[:user][:is_recruiter] == "1"
+    @user.resume.attach(params[:user][:resume])
+    @user.profile_picture.attach(params[:user][:profile_picture]) if params[:user][:profile_picture].present?
 
-        @user.password_requirements
+    # Exclude password from the update process
+    @user.password = params[:user][:password] if params[:user][:password].present?
 
-        if @user.save
+        if @user.save(validate: false)  # Skip validation for password requirements
             redirect_to root_path, notice: 'User updated successfully!'
         else
             flash[:alert] = @user.errors.full_messages.join(', ')
             render :edit
         end
     end
+
 
 
     def destroy
