@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-light navbar-expand-sm fixed-top">
+    <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <%= link_to "Jobber", root_path, class: "navbar-brand text-primary" %> 
 
@@ -26,7 +26,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav justify-content-end">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link text-dark" %> 
         </li>
@@ -49,9 +49,9 @@
           </li>
         <% end %>
       </ul>
-    </div>
 
-    <div class="d-flex justify-content-end align-items-center">
+
+    <div class="d-flex justify-content-start justify-content-lg-end align-items-center">
       <ul class="navbar-nav">
       <% if user_signed_in? %>
           <li class="nav-item align-items-center">
@@ -79,6 +79,7 @@
         <% end %>
       </ul>
   </nav>
+  </div>
   </div>
 
     <div class="container" style="margin-top: 5rem;">

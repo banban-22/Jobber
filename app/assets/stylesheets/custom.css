@@ -28,3 +28,13 @@ tr {
 .border-left-primary {
     border-left: 0.25rem solid #4e73df !important;
 }
+
+.badge-width {
+    width: 6rem !important;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .badge-width {
+        width: 6rem !important;
+    }
+}
