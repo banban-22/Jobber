@@ -14,7 +14,7 @@ def create
   @reviews = @job.reviews.order(created_at: :desc)
 
   if @review.save
-    ResponsesMailer.new_review(@review).deliver_now
+    # ResponsesMailer.new_review(@review).deliver_now
     redirect_to job_path(@job), notice: 'Review created!'
   else
     flash[:alert] = 'Please fix errors below'

@@ -14,7 +14,7 @@ class AppliesController < ApplicationController
         @applies.job = Job.find params[:job_id]
 
         if @applies.save
-            ResponsesMailer.new_apply(@applies).deliver_now if @applies.persisted?
+            # ResponsesMailer.new_apply(@applies).deliver_now if @applies.persisted?
             redirect_to root_path, notice: "Your Application submitted successfully!"
         else
             redirect_to root_path, alert: "You already applied!"
