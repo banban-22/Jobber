@@ -34,6 +34,7 @@ class JobsController < ApplicationController
         @job = Job.new(job_params)
         @job.user = current_user
         @job.job_type = params[:job][:job_type]
+        @job.job_type2 = params[:job][:job_type2]
 
         if @job.save
             redirect_to @job, notice: 'Job was successfully created.'
@@ -49,6 +50,7 @@ class JobsController < ApplicationController
     def update
         @job = Job.find(params[:id])
         @job.job_type = params[:job][:job_type]
+        @job.job_type2 = params[:job][:job_type2]
 
         if @job.update job_params
             redirect_to job_path(@job), notice: "Job is successfully updated!"

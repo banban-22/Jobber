@@ -31,7 +31,12 @@
 
     <div class="form-group mt-3">
     <%= f.label :job_type %>
-    <%= f.select :job_type, ['Full-Time', 'Part-Time', 'Contract', 'Internship'], { prompt: 'Select Job Type' }, class: "form-control" %>
+    <%= f.select :job_type, ['Full-Time', 'Part-Time', 'Internship'], { prompt: 'Select Job Type' }, class: "form-control" %>
+    </div>
+
+    <div class="form-group mt-3">
+    <%= f.label :job_type2 %>
+    <%= f.select :job_type2, ['Permanent', 'Contract'], { prompt: 'Select Another Job Type' }, class: "form-control" %>
     </div>
 
     <div class="form-group mt-3">

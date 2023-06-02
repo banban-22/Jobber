@@ -29,12 +29,12 @@ tr {
     border-left: 0.25rem solid #4e73df !important;
 }
 
-.badge-width {
-    width: 6rem !important;
+.badge-length {
+    width: 20% !important;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .badge-width {
+    .badge-length {
         width: 6rem !important;
     }
 }

@@ -14,7 +14,6 @@ class UsersController < ApplicationController
             redirect_to root_path, notice: 'Account created!'
         else
             flash[:alert] = @user.errors.full_messages.join(', ')
-            p @user.errors.full_messages
             render :new
         end
     end
