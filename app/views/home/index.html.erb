@@ -32,7 +32,7 @@
                         <% end %>
                         </div>
                         <p class="card-text mt-1">
-                        <%= job.description.truncate(40) %>
+                        <%= markdown(job.description.truncate(40)) %>
                         </p>
 
                         <div class="card-text d-flex align-items-center justify-content-start flex-wrap">

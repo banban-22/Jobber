@@ -52,7 +52,7 @@ gem 'cancancan', '~> 3.5'
 
 gem 'jquery-rails', '~> 4.4'
 
-gem 'letter_opener', '~> 1.4', '>= 1.4.1'
+gem 'letter_opener', '~> 1.4', '>= 1.4.1', :group => :development
 
 gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.1'
 
@@ -80,6 +80,7 @@ gem 'chartkick'
 
 gem "groupdate"
 
+gem 'mail'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
